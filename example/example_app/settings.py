@@ -39,14 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'example_app',
-    'rest_framework',
     'django_chatterbot',
 )
-
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
-    'PAGE_SIZE': 10
-}
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

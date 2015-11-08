@@ -1,6 +1,5 @@
-from rest_framework import views
-from rest_framework.response import Response
-from rest_framework import status
+from django.views.generic import View
+from django.http import JsonResponse
 from chatterbot import ChatBot
 
 
@@ -20,19 +19,20 @@ chatterbot.train([
 ])
 
 
-class ChatterBotView(views.APIView):
-    permission_classes = []
+class ChatterBotView(View):
 
     def get(self, request, *args, **kwargs):
         data = {
             'detail': 'You should make a POST request to this endpoint.'
         }
-        return Response(data, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+        # Return a method not allowed response
+        return JsonResponse(data, status=405)
 
     def post(self, request, *args, **kwargs):
-        input_statement = request.data.get('text')
+        input_statement = request.POST.get('text')
 
         response_data = chatterbot.get_response(input_statement)
 
-        return Response(response_data, status=status.HTTP_200_OK)
+        return JsonResponse(response_data)
 

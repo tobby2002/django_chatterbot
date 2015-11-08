@@ -23,6 +23,5 @@ urlpatterns = [
     url(r'^$', ChatterBotAppView.as_view()),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/chatterbot/', include('django_chatterbot.urls', namespace='chatterbot')),
-    url(r'^api/auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 
