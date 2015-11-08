@@ -15,16 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from rest_framework import routers
-from django_chatterbot.api import ChatterBotView
-from django_chatterbot.views import ChatterBotAppView
 
-router = routers.DefaultRouter()
+from example_app.views import ChatterBotAppView
+
 
 urlpatterns = [
     url(r'^$', ChatterBotAppView.as_view()),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/', include(router.urls)),
-    url(r'^api/chatterbot/', ChatterBotView.as_view(), name='chatterbot'),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api/chatterbot/', include('django_chatterbot.urls', namespace='chatterbot')),
+    url(r'^api/auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
+

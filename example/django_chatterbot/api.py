@@ -25,9 +25,9 @@ class ChatterBotView(views.APIView):
 
     def get(self, request, *args, **kwargs):
         data = {
-            'error': 'You should make a POST request to this endpoint.'
+            'detail': 'You should make a POST request to this endpoint.'
         }
-        return Response(data, status=status.HTTP_200_OK)
+        return Response(data, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
     def post(self, request, *args, **kwargs):
         input_statement = request.data.get('text')
