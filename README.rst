@@ -3,10 +3,7 @@ Django ChatterBot
 =================
 
 This is a Django project that makes it possible to create a simple chat bot web
-app using
-[Django](https://www.djangoproject.com),
-[Django REST framework](http://www.django-rest-framework.org) and
-[ChatterBot](https://github.com/gunthercox/ChatterBot).
+app using Django_, `Django REST framework`_ and ChatterBot_
 
 Quick start
 -----------
@@ -28,3 +25,7 @@ Quick start
    to create a poll (you'll need the Admin app enabled).
 
 5. POST to http://127.0.0.1:8000/chatterbot/ to start a conversation.
+
+.. _Django: https://www.djangoproject.com
+.. _Django REST framework: http://www.django-rest-framework.org
+.. _ChatterBot: https://github.com/gunthercox/ChatterBot
