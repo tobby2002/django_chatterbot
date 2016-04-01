@@ -1,2 +1,2 @@
 django>=1.8.0
-chatterbot>=0.2.2
+chatterbot>=0.3.6
