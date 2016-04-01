@@ -24,10 +24,7 @@ Quick start
 
 3. Run `python manage.py migrate` to create the chatterbot models.
 
-4. Start the development server and visit http://127.0.0.1:8000/admin/
-   to create a poll (you'll need the Admin app enabled).
-
-5. POST to http://127.0.0.1:8000/chatterbot/ to start a conversation.
+4. POST to http://127.0.0.1:8000/chatterbot/ to start a conversation.
 
 .. _Django: https://www.djangoproject.com
 .. _Django REST framework: http://www.django-rest-framework.org
