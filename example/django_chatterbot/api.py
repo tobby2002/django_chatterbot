@@ -1,12 +1,15 @@
 from django.views.generic import View
 from django.http import JsonResponse
 from chatterbot import ChatBot
+from chatterbot.training.trainers import ListTrainer
 
 
 chatterbot = ChatBot(
     'Example ChatterBot',
     io_adapter="chatterbot.adapters.io.JsonAdapter"
 )
+
+chatterbot.set_trainer(ListTrainer)
 
 chatterbot.train([
     "Hi",
@@ -35,4 +38,3 @@ class ChatterBotView(View):
         response_data = chatterbot.get_response(input_statement)
 
         return JsonResponse(response_data)
-
