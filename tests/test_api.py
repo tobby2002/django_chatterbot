@@ -12,7 +12,7 @@ class ApiTestCase(TestCase):
             'text': 'How are you?'
         }
         api_url = reverse('chatterbot:chatterbot')
-        response = self.client.post(api_url, data)
+        response = self.client.post(api_url, data, format='json')
 
         self.assertEqual(response.status_code, 200)
         self.assertIn('text', str(response.content))

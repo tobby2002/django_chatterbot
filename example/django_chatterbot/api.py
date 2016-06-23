@@ -6,7 +6,9 @@ from chatterbot.training.trainers import ListTrainer
 
 chatterbot = ChatBot(
     'Example ChatterBot',
-    io_adapter="chatterbot.adapters.io.JsonAdapter"
+    input_adapter='chatterbot.adapters.input.VariableInputTypeAdapter',
+    output_adapter='chatterbot.adapters.output.OutputFormatAdapter',
+    output_format='json'
 )
 
 chatterbot.set_trainer(ListTrainer)
@@ -37,4 +39,4 @@ class ChatterBotView(View):
 
         response_data = chatterbot.get_response(input_statement)
 
-        return JsonResponse(response_data)
+        return JsonResponse(response_data, status=200)
