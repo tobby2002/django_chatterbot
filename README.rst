@@ -1,5 +1,7 @@
 .. image:: https://travis-ci.org/gunthercox/django_chatterbot.svg?branch=master
     :target: https://travis-ci.org/gunthercox/django_chatterbot
+.. image:: https://img.shields.io/pypi/v/chatterbot.svg
+    :target: https://pypi.python.org/pypi/django-chatterbot/
 
 =================
 Django ChatterBot
